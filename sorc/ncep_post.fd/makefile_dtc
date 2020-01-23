@@ -102,7 +102,7 @@ clean:
 	@echo -e "\n<><><><> CLEAN <><><><>\n$@ in `pwd`"
 	$(RM) $(TARGET) $(OBJS) *.lst *.mod
 	$(RM) $(BINDIR)/$(TARGET)
-	for f in `ls -1 *.F|sed "s/.F$$/.f/"` ; do \
+	for f in `ls -1 *.FTN|sed "s/.FTN$$/.f/"` ; do \
       $(RM) $$f   ; \
    done
 
@@ -112,9 +112,9 @@ distclean: clean
 .PHONY: clean 
 
 .SUFFIXES:
-.SUFFIXES:	.F .f .f90 .o .c
+.SUFFIXES:	.FTN .f .f90 .o .c
 
-.F.o:
+.FTN.o:
 	$(CPP) $(CPP_FLAGS) $(EXTRA_CPPFLAGS) $< > $*.f
 	$(F90)  -c $(FFLAGS) $(EXTRA_FFLAGS) $*.f
 

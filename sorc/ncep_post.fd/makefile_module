@@ -97,9 +97,9 @@ OBJS =  wrf_io_flags.o getVariable.o getIVariableN.o \
 	gtg_ctlblk.o gtg_indices.o gtg_filter.o gtg_compute.o gtg_config.o map_routines.o gtg_algo.o gtg_smoothseams.o
 
 
-.SUFFIXES: .F .f .o .f90 .c
+.SUFFIXES: .FTN .f .o .f90 .c
 
-.F.f:
+.FTN.f:
 	$(CPP) $(CPPFLAGS) $< > $*.f
 
 $(TARGET):	$(OBJST) $(OBJS)
