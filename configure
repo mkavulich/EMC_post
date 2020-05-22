@@ -85,7 +85,7 @@ fi
 
 # SP library
 if [ -z "$SPLIB_VERSION" ]; then
-  SPLIB_VERSION=2.0.2
+  SPLIB_VERSION=2.1.0
 fi
 if [ ! -z "$SPLIBDIR" ]; then
   SPFILE=$SPLIBDIR/libsp_v${SPLIB_VERSION}_d.a
@@ -103,7 +103,7 @@ fi
 
 # sigio library
 if [ -z "$SIGIOLIB_VERSION" ]; then
-  SIGIOLIB_VERSION=2.0.1
+  SIGIOLIB_VERSION=2.2.0
 fi
 if [ ! -z "$SIGIOLIBDIR" ]; then
   SIGIOFILE=$SIGIOLIBDIR/libsigio_v${SIGIOLIB_VERSION}_4.a
@@ -136,7 +136,7 @@ fi
 
 # W3 library (EMC)
 if [ -z "$W3EMCLIB_VERSION" ]; then
-  W3EMCLIB_VERSION=2.2.0
+  W3EMCLIB_VERSION=2.5.0
 fi
 if [ ! -z "$W3EMCLIBDIR" ]; then
   W3EMCFILE=$W3EMCLIBDIR/libw3emc_v${W3EMCLIB_VERSION}_4.a
@@ -169,7 +169,7 @@ fi
 
 # W3 library (NCO)
 if [ -z "$W3NCOLIB_VERSION" ]; then
-  W3NCOLIB_VERSION=2.0.6
+  W3NCOLIB_VERSION=2.1.0
 fi
 if [ ! -z "$W3NCOLIBDIR" ]; then
   W3NCOFILE=$W3NCOLIBDIR/libw3nco_v${W3NCOLIB_VERSION}_4.a
