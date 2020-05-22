@@ -187,10 +187,10 @@ fi
 
 # NEMSIO library
 if [ -z "$NEMSIOLIB_VERSION" ]; then
-  NEMSIOLIB_VERSION=2.2.3
+  NEMSIOLIB_VERSION=2.3.0
 fi
 if [ ! -z "$NEMSIOLIBDIR" ]; then
-  NEMSIOFILE=$NEMSIOLIBDIR/libnemsio_d.a
+  NEMSIOFILE=$NEMSIOLIBDIR/libnemsio_v${NEMSIOLIB_VERSION}.a
   if [ -f $NEMSIOFILE ]; then
     echo "Found NEMSIO library: $NEMSIOFILE"
     NCEPLIBLIB="-L$NEMSIOLIBDIR $NCEPLIBLIB"
@@ -220,7 +220,7 @@ fi
 
 # sfcio library
 if [ -z "$SFCIOLIB_VERSION" ]; then
-  SFCIOLIB_VERSION=1.0.0
+  SFCIOLIB_VERSION=1.2.0
 fi
 if [ ! -z "$SFCIOLIBDIR" ]; then
   SFCIOFILE=$SFCIOLIBDIR/libsfcio_v${SFCIOLIB_VERSION}_4.a
@@ -253,7 +253,7 @@ fi
 
 # grib2 library
 if [ -z "$G2LIB_VERSION" ]; then
-  G2LIB_VERSION=3.1.0
+  G2LIB_VERSION=3.2.0
 fi
 if [ ! -z "$G2LIBDIR" ]; then
   G2FILE=$G2LIBDIR/libg2_v${G2LIB_VERSION}_4.a
@@ -271,7 +271,7 @@ fi
 
 # g2 template library
 if [ -z "$G2TMPLLIB_VERSION" ]; then
-  G2TMPLLIB_VERSION=1.5.0
+  G2TMPLLIB_VERSION=1.7.0
 fi
 if [ ! -z "$G2TMPLLIBDIR" ]; then
   G2TMPLFILE=$G2TMPLLIBDIR/libg2tmpl_v${G2TMPLLIB_VERSION}.a
@@ -304,10 +304,10 @@ fi
 
 # gfsio library
 if [ -z "$GFSIOLIB_VERSION" ]; then
-  GFSIOLIB_VERSION=1.1.0
+  GFSIOLIB_VERSION=1.2.0
 fi
 if [ ! -z "$GFSIOLIBDIR" ]; then
-  GFSIOFILE=$GFSIOLIBDIR/libgfsio_4.a
+  GFSIOFILE=$GFSIOLIBDIR/libgfsio_v${GFSIOLIB_VERSION}_4.a
   if [ -f $GFSIOFILE ]; then
     echo "Found GFSIO library: $GFSIOFILE"
     NCEPLIBLIB="-L$GFSIOLIBDIR $NCEPLIBLIB"
@@ -436,7 +436,8 @@ if [ -n "$srch" ] ; then
                            -sigiov=$SIGIOLIB_VERSION -w3emcv=$W3EMCLIB_VERSION \
                            -w3ncov=$W3NCOLIB_VERSION -sfciov=$SFCIOLIB_VERSION \
                            -g2v=$G2LIB_VERSION -g2tmplv=$G2TMPLLIB_VERSION     \
-                           -baciov=$BACIOLIB_VERSION
+                           -baciov=$BACIOLIB_VERSION -nemsiov=$NEMSIOLIB_VERSION \
+                           -gfsiov=$GFSIOLIB_VERSION
 else
   echo '***********************************************'
   echo '***         ERROR ERROR ERROR ERROR         ***'
