@@ -67,10 +67,10 @@ declare -a REQUIREDDIRS=("BACIOLIBDIR" "SPLIBDIR" "SIGIOLIBDIR" "SIGIOINCDIR" "W
 
 # bacio library
 if [ -z "$BACIOLIB_VERSION" ]; then
-  BACIOLIB_VERSION=2.0.1
+  BACIOLIB_VERSION=2.2.0
 fi
 if [ ! -z "$BACIOLIBDIR" ]; then
-  BACIOFILE=$BACIOLIBDIR/libbacio_4.a
+  BACIOFILE=$BACIOLIBDIR/libbacio_v${BACIOLIB_VERSION}_4.a
   if [ -f $BACIOFILE ]; then
     echo "Found BACIO library: $BACIOFILE"
     NCEPLIBLIB="-L$BACIOLIBDIR $NCEPLIBLIB"
@@ -435,7 +435,8 @@ if [ -n "$srch" ] ; then
                            -debug=$DEBUG -spv=$SPLIB_VERSION                   \
                            -sigiov=$SIGIOLIB_VERSION -w3emcv=$W3EMCLIB_VERSION \
                            -w3ncov=$W3NCOLIB_VERSION -sfciov=$SFCIOLIB_VERSION \
-                           -g2v=$G2LIB_VERSION -g2tmplv=$G2TMPLLIB_VERSION
+                           -g2v=$G2LIB_VERSION -g2tmplv=$G2TMPLLIB_VERSION     \
+                           -baciov=$BACIOLIB_VERSION
 else
   echo '***********************************************'
   echo '***         ERROR ERROR ERROR ERROR         ***'

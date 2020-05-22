@@ -44,6 +44,7 @@ $sw_w3ncov = "" ;             # w3ncolib version number
 $sw_sfciov = "" ;             # sfciolib version number
 $sw_g2v = "" ;                # g2lib version number
 $sw_g2tmplv = "" ;            # g2tmpllib version number
+$sw_baciov = "" ;             # baciolib version number
 
 # make sure we do not buffer stdout
 select((select(STDOUT), $|=1)[0]);
@@ -120,11 +121,15 @@ while ( substr( $ARGV[0], 0, 1 ) eq "-" )
   {
     $sw_g2tmplv = substr( $ARGV[0], 9 ) ;
   }
+  if ( substr( $ARGV[0], 1, 7 ) eq "baciov=" )
+  {
+    $sw_baciov = substr( $ARGV[0], 8 ) ;
+  }
   shift @ARGV ;
  }
 
 # Build string of nceplib flags based off input from configure script
-$nceplib_flags = "-lwrfio -lg2_v${sw_g2v}_4 -lg2tmpl_v${sw_g2tmplv} -lnemsio_d -lsigio_v${sw_sigiov}_4 -lsfcio_v${sw_sfciov}_4 -lgfsio_4 -lsp_v${sw_spv}_d -lw3nco_v${sw_w3ncov}_4 -lw3emc_v${sw_w3emcv}_4 -lbacio_4" ;
+$nceplib_flags = "-lwrfio -lg2_v${sw_g2v}_4 -lg2tmpl_v${sw_g2tmplv} -lnemsio_d -lsigio_v${sw_sigiov}_4 -lsfcio_v${sw_sfciov}_4 -lgfsio_4 -lsp_v${sw_spv}_d -lw3nco_v${sw_w3ncov}_4 -lw3emc_v${sw_w3emcv}_4 -lbacio_v${sw_baciov}_4" ;
 
 
 #
