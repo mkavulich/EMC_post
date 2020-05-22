@@ -66,7 +66,7 @@ NCEPLIBINC=''
 declare -a REQUIREDDIRS=("BACIOLIBDIR" "SPLIBDIR" "SIGIOLIBDIR" "SIGIOINCDIR" "W3EMCLIBDIR" "W3EMCINCDIR" "W3NCOLIBDIR" "NEMSIOLIBDIR" "NEMSIOINCDIR" "SFCIOLIBDIR" "SFCIOINCDIR" "G2LIBDIR" "G2TMPLLIBDIR" "G2TMPLINCDIR" "GFSIOLIBDIR" "GFSIOINCDIR" "WRFIOLIBDIR" )
 
 if [ ! -z "$BACIOLIBDIR" ]; then
-  BACIOFILE=$BACIOLIBDIR/libbacio.a
+  BACIOFILE=$BACIOLIBDIR/libbacio_4.a
   if [ -f $BACIOFILE ]; then
     echo "Found BACIO library: $BACIOFILE"
     NCEPLIBLIB="-L$BACIOLIBDIR $NCEPLIBLIB"
@@ -79,7 +79,7 @@ if [ ! -z "$BACIOLIBDIR" ]; then
   fi
 fi
 if [ ! -z "$SPLIBDIR" ]; then
-  SPFILE=$SPLIBDIR/libsp.a
+  SPFILE=$SPLIBDIR/libsp_v2.0.2_d.a
   if [ -f $SPFILE ]; then
     echo "Found SP library: $SPFILE"
     NCEPLIBLIB="-L$SPLIBDIR $NCEPLIBLIB"
@@ -95,7 +95,7 @@ if [ -z "$SPLIB_VERSION" ]; then
   SPLIB_VERSION=2.0.2
 fi
 if [ ! -z "$SIGIOLIBDIR" ]; then
-  SIGIOFILE=$SIGIOLIBDIR/libsigio.a
+  SIGIOFILE=$SIGIOLIBDIR/libsigio_v2.0.1_4.a
   if [ -f $SIGIOFILE ]; then
     echo "Found SIGIO library: $SIGIOFILE"
     NCEPLIBLIB="-L$SIGIOLIBDIR $NCEPLIBLIB"
@@ -126,7 +126,7 @@ if [ -z "$SIGIOLIB_VERSION" ]; then
   SIGIOLIB_VERSION=2.0.1
 fi
 if [ ! -z "$W3EMCLIBDIR" ]; then
-  W3EMCFILE=$W3EMCLIBDIR/libw3emc.a
+  W3EMCFILE=$W3EMCLIBDIR/libw3emc_v2.2.0_4.a
   if [ -f $W3EMCFILE ]; then
     echo "Found W3EMC library: $W3EMCFILE"
     NCEPLIBLIB="-L$W3EMCLIBDIR $NCEPLIBLIB"
@@ -157,7 +157,7 @@ if [ -z "$W3EMCLIB_VERSION" ]; then
   W3EMCLIB_VERSION=2.2.0
 fi
 if [ ! -z "$W3NCOLIBDIR" ]; then
-  W3NCOFILE=$W3NCOLIBDIR/libw3nco.a
+  W3NCOFILE=$W3NCOLIBDIR/libw3nco_v2.0.6_4.a
   if [ -f $W3NCOFILE ]; then
     echo "Found W3NCO library: $W3NCOFILE"
     NCEPLIBLIB="-L$W3NCOLIBDIR $NCEPLIBLIB"
@@ -173,7 +173,7 @@ if [ -z "$W3NCOLIB_VERSION" ]; then
   W3NCOLIB_VERSION=2.0.6
 fi
 if [ ! -z "$NEMSIOLIBDIR" ]; then
-  NEMSIOFILE=$NEMSIOLIBDIR/libnemsio.a
+  NEMSIOFILE=$NEMSIOLIBDIR/libnemsio_d.a
   if [ -f $NEMSIOFILE ]; then
     echo "Found NEMSIO library: $NEMSIOFILE"
     NCEPLIBLIB="-L$NEMSIOLIBDIR $NCEPLIBLIB"
@@ -201,7 +201,7 @@ if [ ! -z "$NEMSIOINCDIR" ]; then
   REQUIREDDIRS=( "${REQUIREDDIRS[@]/"NEMSIOINCDIR"}" )
 fi
 if [ ! -z "$SFCIOLIBDIR" ]; then
-  SFCIOFILE=$SFCIOLIBDIR/libsfcio.a
+  SFCIOFILE=$SFCIOLIBDIR/libsfcio_v1.0.0_4.a
   if [ -f $SFCIOFILE ]; then
     echo "Found SFCIO library: $SFCIOFILE"
     NCEPLIBLIB="-L$SFCIOLIBDIR $NCEPLIBLIB"
@@ -232,7 +232,7 @@ if [ -z "$SFCIOLIB_VERSION" ]; then
   SFCIOLIB_VERSION=1.0.0
 fi
 if [ ! -z "$G2LIBDIR" ]; then
-  G2FILE=$G2LIBDIR/libg2.a
+  G2FILE=$G2LIBDIR/libg2_v3.1.0_4.a
   if [ -f $G2FILE ]; then
     echo "Found G2 library: $G2FILE"
     NCEPLIBLIB="-L$G2LIBDIR $NCEPLIBLIB"
@@ -248,7 +248,7 @@ if [ -z "$G2LIB_VERSION" ]; then
   G2LIB_VERSION=3.1.0
 fi
 if [ ! -z "$G2TMPLLIBDIR" ]; then
-  G2TMPLFILE=$G2TMPLLIBDIR/libg2tmpl.a
+  G2TMPLFILE=$G2TMPLLIBDIR/libg2tmpl_v1.5.0.a
   if [ -f $G2TMPLFILE ]; then
     echo "Found G2TMPL library: $G2TMPLFILE"
     NCEPLIBLIB="-L$G2TMPLLIBDIR $NCEPLIBLIB"
@@ -279,7 +279,7 @@ if [ -z "$G2TMPLLIB_VERSION" ]; then
   G2TMPLLIB_VERSION=1.5.0
 fi
 if [ ! -z "$GFSIOLIBDIR" ]; then
-  GFSIOFILE=$GFSIOLIBDIR/libgfsio.a
+  GFSIOFILE=$GFSIOLIBDIR/libgfsio_4.a
   if [ -f $GFSIOFILE ]; then
     echo "Found GFSIO library: $GFSIOFILE"
     NCEPLIBLIB="-L$GFSIOLIBDIR $NCEPLIBLIB"
