@@ -65,6 +65,10 @@ NCEPLIBINC=''
 # This way if all required libs and incs are specified, NCEPLIBS_DIR is not required
 declare -a REQUIREDDIRS=("BACIOLIBDIR" "SPLIBDIR" "SIGIOLIBDIR" "SIGIOINCDIR" "W3EMCLIBDIR" "W3EMCINCDIR" "W3NCOLIBDIR" "NEMSIOLIBDIR" "NEMSIOINCDIR" "SFCIOLIBDIR" "SFCIOINCDIR" "G2LIBDIR" "G2TMPLLIBDIR" "G2TMPLINCDIR" "GFSIOLIBDIR" "GFSIOINCDIR" "WRFIOLIBDIR" )
 
+# bacio library
+if [ -z "$BACIOLIB_VERSION" ]; then
+  BACIOLIB_VERSION=2.0.1
+fi
 if [ ! -z "$BACIOLIBDIR" ]; then
   BACIOFILE=$BACIOLIBDIR/libbacio_4.a
   if [ -f $BACIOFILE ]; then
@@ -97,7 +101,7 @@ if [ ! -z "$SPLIBDIR" ]; then
   fi
 fi
 
-#sigio library
+# sigio library
 if [ -z "$SIGIOLIB_VERSION" ]; then
   SIGIOLIB_VERSION=2.0.1
 fi
@@ -182,6 +186,9 @@ if [ ! -z "$W3NCOLIBDIR" ]; then
 fi
 
 # NEMSIO library
+if [ -z "$NEMSIOLIB_VERSION" ]; then
+  NEMSIOLIB_VERSION=2.2.3
+fi
 if [ ! -z "$NEMSIOLIBDIR" ]; then
   NEMSIOFILE=$NEMSIOLIBDIR/libnemsio_d.a
   if [ -f $NEMSIOFILE ]; then
@@ -295,7 +302,10 @@ if [ ! -z "$G2TMPLINCDIR" ]; then
   REQUIREDDIRS=( "${REQUIREDDIRS[@]/"G2TMPLINCDIR"}" )
 fi
 
-#gfsio library
+# gfsio library
+if [ -z "$GFSIOLIB_VERSION" ]; then
+  GFSIOLIB_VERSION=1.1.0
+fi
 if [ ! -z "$GFSIOLIBDIR" ]; then
   GFSIOFILE=$GFSIOLIBDIR/libgfsio_4.a
   if [ -f $GFSIOFILE ]; then
